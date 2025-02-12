@@ -1,9 +1,13 @@
+import os
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
+from dotenv import load_dotenv
 
 # Токен сообщества (получите в настройках группы)
-TOKEN = "vk1.a.YqBGA3f3n4BFNxP1NlTeG19zaFDU-kHG7nwBXcJv4hDfvlxFe0FVVT6pBBZdpgap3kinmNakvQZtjL8v9Ezz0ud93ZjfTBBF8_up94kb881l7MDYCT4VF8P0SCyTBzWDOZq7oQLV-I109rsAFtA5IhP6x3T2dy9B9DHvxsm4laFiDeQDxVkde7iiFvw8xSYwAp51Jgdi3fgRX9ueyENLWA"
+load_dotenv()
+TOKEN = os.getenv("VK_TOKEN")
+TOKEN = "ICEGERGERT "
 
 # Подключение к API
 vk_session = vk_api.VkApi(token=TOKEN)
