@@ -4,9 +4,15 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from dotenv import load_dotenv
 
-# Токен сообщества (получите в настройках группы)
-load_dotenv()
-TOKEN = os.environ("VK_BOT_TOKEN")
+if os.getenv("RAILWAY_ENVIRONMENT") is None:
+    load_dotenv()
+
+# Загружаем токен из переменной окружения Railway
+TOKEN = os.getenv("VK_BOT_TOKEN")
+
+# Проверяем, что токен загружен
+if not TOKEN:
+    raise ValueError("❌ Ошибка: Переменная окружения VK_TOKEN не найдена!")
 
 # Подключение к API
 vk_session = vk_api.VkApi(token=TOKEN)

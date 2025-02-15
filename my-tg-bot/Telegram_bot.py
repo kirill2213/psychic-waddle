@@ -4,9 +4,15 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import os
 from dotenv import load_dotenv
 
-# Токен Telegram-бота
-load_dotenv()
-BOT_TOKEN = os.environ("TG_BOT_TOKEN")
+if os.getenv("RAILWAY_ENVIRONMENT") is None:
+    load_dotenv()
+
+# Загружаем токен из переменной окружения Railway
+BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
+
+# Проверяем, что токен загружен
+if not BOT_TOKEN:
+    raise ValueError("❌ Ошибка: Переменная окружения VK_TOKEN не найдена!")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
