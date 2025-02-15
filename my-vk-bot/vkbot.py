@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Токен сообщества (получите в настройках группы)
 load_dotenv()
-TOKEN = os.getenv("VK_BOT_TOKEN")
+TOKEN = os.getenv("VK_GROUP_TOKEN")
 
 # Подключение к API
 vk_session = vk_api.VkApi(token=TOKEN)
