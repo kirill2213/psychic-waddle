@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Токен Telegram-бота
 load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
