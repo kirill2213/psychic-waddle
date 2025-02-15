@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Токен Telegram-бота
 load_dotenv()
-BOT_TOKEN = os.getenv("TG_TOKEN")
+BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
@@ -16,7 +16,7 @@ keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="📷 Как работает фотостудия?")],
         [KeyboardButton(text="🕒 Забронировать время")],
-        [KeyboardButton(text="📍 Где мы находимся?")],
+        [KeyboardButton(text="📍 Где находится студия?")],
         [KeyboardButton(text="❓ Задать вопрос")],
     ],
     resize_keyboard=True
